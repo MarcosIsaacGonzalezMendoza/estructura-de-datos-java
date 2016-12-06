@@ -1,0 +1,128 @@
+public class Automata extends ArrayList {
+
+    public void encular(Object dato) {
+        if (dato != null) {
+            this.add(dato);
+        } else {
+            System.out.println("Introduzcan un dato diferente de null: ");
+        }
+    }
+
+    public void desencular() {
+        if (this.size() > 0) {
+            this.remove(0);
+        }
+    }
+
+    public Object frente() {
+        Object datoAuxiliar = null;
+        if (this.size() > 0) {
+            datoAuxiliar = this.get(0);
+        }
+        return datoAuxiliar;
+    }
+
+    public boolean vacio() {
+        return this.isEmpty();
+    }
+
+}
+
+package los_xv_de_la_ruby;
+
+/**
+ *
+ * @author Isaac González
+ */
+import java.util.*;
+
+public class Los_xv_de_la_Ruby {
+
+    /**
+     * @param args the command line arguments
+     */
+     //declaramos las variables necesarias
+    static Automata ruby = new Automata();
+    static Scanner casto = new Scanner(System.in);
+    static int a = 0, b = 0, c = 4000;
+    static String Name;
+
+    public static void main(String[] args) throws InterruptedException {
+        //leemos cuantos invitados vamos a agregar
+        System.out.println("Cuantos invitados desea agregar?");
+        b = casto.nextInt();
+        System.out.println("Introduce los invitados a la fiesta de la ruby");
+        // aqui llenamos la pila con los nombrs de los invitados 
+        do {
+        
+            a++;
+            Name = casto.next();
+            ruby.encular(Name);
+
+        } while (a != b);
+        //ponemos la infomracion dada de alientos por persona y lo restante en la pila
+        System.out.println("Usted agrego a " + a + "a los XV de la ruby");
+        System.out.println("Usted tiene una pila de 40000 alimentos");
+        System.out.println("A sus invitados se les asignarà de comida");
+        for (int i = 0; i < a; i++) {
+            System.out.println("------------------------------------------");
+            System.out.println(ruby.frente() + "   1.- plato de repoio "
+                    + "2.- 3 caguamas bien muertas "
+                    + "3.- 4 tacos de ternera "
+                    + "4.- 1 bolo pal morrillo"
+                    + "5.- una foto autografiada por la ruby");
+            ruby.desencular();
+
+        }
+        a = 4000 - a;
+        System.out.println("----------------------------------------");
+        System.out.println("los alimento apilados restantes son: " + a);
+        System.out.println("----------------------------------------");
+        System.out.println("El juego de atrapar al gallo");
+        System.out.println("Los boletos que entraràn son 15");
+        //utilizamos numeros aleatorios para sortear .lo boletos 
+        int vecto[] = new int[15];
+        //rellenar el vector de los 15 boletos
+        for (int i = 0; i < vecto.length; i++) {
+            int azar = (int) (Math.random() * (4000 - 0 + 1) + 0);
+            vecto[i] = azar;
+
+        }
+        for (int i = 0; i < vecto.length; i++) {
+        //anunciamos los boletos ganadores
+            System.out.println("Boleto " + i + " es el numero: " + vecto[i]);
+            int seg;
+            // segundero
+            for (seg = 1; seg < 5; seg++) {
+                System.out.println();
+                System.out.println("00:00:0" + seg);
+                Thread.sleep(1000);
+
+            }
+
+        }
+        // observamos la lucha encarnizada por la gallina
+        
+        for (int i = 0; i == 0; i++) {
+            System.out.println("Esatan luchando ahora");
+            int seg;
+            for (seg = 1; seg < 21; seg++) {
+                System.out.println();
+                System.out.println("00:00:0" + seg);
+                Thread.sleep(1000);
+
+            }
+            System.out.println("ganador despues de 20 segundos ce lucha encarnizada"
+                    + " es:  " + vecto[3] + " llamado jose Luis");
+
+        }
+        //anunciamos ganadores y damos las gracias
+        System.out.println("El hurquillo ganador recibió los 50,000 pesos");
+        System.out.println("La fiesta de XV de la Ruby a concluido con exito"
+                + "\n Cantemos celebremos y nos vemos en los 17 años :3");
+
+    }
+
+}
+
+
